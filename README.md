@@ -1,1 +1,1 @@
-# Projeto com o intuito de estudare criar um joguinho basico
+# Projeto com o intuito de estudar e criar um joguinho basico
