@@ -26,7 +26,7 @@
             <div class="content text-center" style="margin-top: 40px"> <!--Se o monstro foi ecolhido printa isso  -->
                 <h4>Pokemon escolhido: <?php echo $monstro->nome?></h4>
                 <h4>Quantidade de vida: <?php echo $monstro->vida?> HP</h4>
-                <h4>Quantidade de dano: <?php echo $monstro->ataque?> ATK</h4>
+                <h4>Quantidade de ataque: <?php echo $monstro->ataque?> ATK</h4>
             </div>
             <div class="content text-center" style="margin-top: 40px;">
                 <h1>Vamos batalhar?</h1>
