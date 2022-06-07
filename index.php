@@ -1,4 +1,7 @@
-<?php require_once("classes/Monstro.php"); ?>
+<?php require_once("classes/Monstro.php"); 
+session_start();
+$_SESSION["comecarBatalha"] = null;
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -10,8 +13,8 @@
     </head>
     <body>
         <form action="" method="get" class="container col-3 text-center" style="margin-top: 40px;">
-            <label for="tipoMonstro" class="form-label">Escolha um monstro:</label>
-            <select name="tipoMonstro" id="" class="form-control text-center">
+            <label for="codMonstro" class="form-label">Escolha um monstro:</label>
+            <select name="codMonstro" id="" class="form-control text-center">
                 <option value="1">Litten</option>
                 <option value="2">Bubassaur</option>
                 <option value="3">Froakie</option>
@@ -20,8 +23,9 @@
         </form>
 
         <!-- PHP -->
-        <?php  if(isset($_GET["tipoMonstro"]) && !empty($_GET["tipoMonstro"])){ 
-            $monstro = new Monstro($_GET["tipoMonstro"]);
+        <?php  if(isset($_GET["codMonstro"]) && !empty($_GET["codMonstro"])){ 
+            $monstro = new Monstro($_GET["codMonstro"]);
+            $_SESSION["codMonstroPlayer"] = $_GET["codMonstro"];
         ?>
             <div class="content text-center" style="margin-top: 40px"> <!--Se o monstro foi ecolhido printa isso  -->
                 <h4>Pokemon escolhido: <?php echo $monstro->nome?></h4>
@@ -30,7 +34,7 @@
             </div>
             <div class="content text-center" style="margin-top: 40px;">
                 <h1>Vamos batalhar?</h1>
-                <a href="batalha.php" class="btn btn-success btn-lg">Batalhar!</a>
+                <a href="batalha.php?>" class="btn btn-success btn-lg" >Batalhar!</a>
             </div>
         <?php }else{
                 echo"<h1 class='text-center'>Escolha um pokemon por favor!</h1>";
